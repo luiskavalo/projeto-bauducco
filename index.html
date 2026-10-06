@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bauducco | Tradição que aproxima</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fff8ed;
+            color: #4a1f0f;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: #b51218;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd66b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 600px;
+            background:
+                linear-gradient(rgba(110, 0, 0, 0.55), rgba(110, 0, 0, 0.55)),
+                url("https://images.unsplash.com/photo-1609501676725-7186f017a4b7?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f5c542;
+            color: #5a180c;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 70px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo h2 {
+            color: #b51218;
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .titulo p {
+            color: #765345;
+            font-size: 17px;
+        }
+
+        /* HISTÓRIA */
+        .historia {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .historia-texto {
+            flex: 1;
+        }
+
+        .historia-texto h2 {
+            color: #b51218;
+            font-family: Georgia, serif;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .historia-texto p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .historia-img {
+            flex: 1;
+        }
+
+        .historia-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(90, 24, 12, 0.25);
+        }
+
+        /* PRODUTOS */
+        #produtos {
+            background: #fff0d5;
+        }
+
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .produto {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(80, 30, 10, 0.15);
+            transition: 0.3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-8px);
+        }
+
+        .produto img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .produto-info {
+            padding: 25px;
+        }
+
+        .produto h3 {
+            color: #b51218;
+            font-family: Georgia, serif;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .produto p {
+            color: #765345;
+            line-height: 1.5;
+        }
+
+        /* VALORES */
+        .valores {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .valor {
+            background: #b51218;
+            color: white;
+            padding: 35px 25px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .valor .icone {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .valor h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .valor p {
+            line-height: 1.6;
+        }
+
+        /* CONTATO */
+        .contato {
+            background: #5a180c;
+            color: white;
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .contato p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #350e08;
+            color: #f5d8b7;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .historia {
+                flex-direction: column;
+            }
+
+            .produtos,
+            .valores {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">Bauducco</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#historia">História</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#valores">Valores</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- INÍCIO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Bauducco</h1>
+
+            <p>
+                Tradição, sabor e momentos especiais que fazem parte
+                da vida de milhões de famílias.
+            </p>
+
+            <a href="#produtos" class="btn">Conheça nossos produtos</a>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section id="historia">
+        <div class="historia">
+
+            <div class="historia-texto">
+                <h2>Uma história de tradição</h2>
+
+                <p>
+                    A Bauducco construiu sua história no Brasil levando
+                    produtos de confeitaria para diferentes gerações.
+                </p>
+
+                <p>
+                    A marca é conhecida especialmente por seus panetones,
+                    chocotones, biscoitos e outros produtos que fazem parte
+                    de momentos de celebração.
+                </p>
+
+                <p>
+                    Mais do que alimentos, a proposta da marca está ligada
+                    à ideia de compartilhar momentos e aproximar pessoas.
+                </p>
+            </div>
+
+            <div class="historia-img">
+                <img
+                    src="https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=900&q=80"
+                    alt="Produtos de confeitaria">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos">
+        <div class="titulo">
+            <h2>Produtos</h2>
+            <p>Alguns dos sabores que conquistaram gerações.</p>
+        </div>
+
+        <div class="produtos">
+
+            <div class="produto">
+                <img
+                    src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+                    alt="Bolo de chocolate">
+
+                <div class="produto-info">
+                    <h3>Chocottone</h3>
+                    <p>
+                        Uma opção para quem ama a combinação de massa macia
+                        com muito chocolate.
+                    </p>
+                </div>
+            </div>
+
+            <div class="produto">
+                <img
+                    src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80"
+                    alt="Panetone">
+
+                <div class="produto-info">
+                    <h3>Panettone</h3>
+                    <p>
+                        Um clássico das celebrações, perfeito para compartilhar
+                        com família e amigos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="produto">
+                <img
+                    src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80"
+                    alt="Biscoitos">
+
+                <div class="produto-info">
+                    <h3>Biscoitos</h3>
+                    <p>
+                        Sabores para acompanhar o café, o lanche ou aquele
+                        momento especial durante o dia.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section id="valores">
+
+        <div class="titulo">
+            <h2>Nossos valores</h2>
+            <p>O que torna uma marca especial vai além do produto.</p>
+        </div>
+
+        <div class="valores">
+
+            <div class="valor">
+                <div class="icone">❤️</div>
+                <h3>Família</h3>
+                <p>
+                    Valorizar momentos de união e compartilhamento
+                    entre pessoas.
+                </p>
+            </div>
+
+            <div class="valor">
+                <div class="icone">🍞</div>
+                <h3>Tradição</h3>
+                <p>
+                    Manter sabores e experiências que atravessam gerações.
+                </p>
+            </div>
+
+            <div class="valor">
+                <div class="icone">⭐</div>
+                <h3>Qualidade</h3>
+                <p>
+                    Buscar qualidade e cuidado em cada produto.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+        <h2>Vamos compartilhar bons momentos?</h2>
+
+        <p>
+            Conheça mais sobre a Bauducco e seus produtos.
+        </p>
+
+        <a href="https://www.bauducco.com.br/"
+           target="_blank"
+           class="btn">
+            Visitar site oficial
+        </a>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>
+            © 2026 - Página demonstrativa sobre a Bauducco.
+        </p>
+    </footer>
+
+</body>
+</html>  
+</body>
+</html>
